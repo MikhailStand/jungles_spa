@@ -1,0 +1,8 @@
+.DS_Store
+.pnpm-store/
+site/node_modules/
+site/dist/
+site/.next/
+site/.vinext/
+site/.wrangler/
+
