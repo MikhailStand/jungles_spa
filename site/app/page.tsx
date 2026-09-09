@@ -147,12 +147,18 @@ const masters = [
 ];
 
 const passes = [
-  { amount: '20 000 ₽', discount: '10%', example: '4 140 ₽' },
-  { amount: '30 000 ₽', discount: '15%', example: '3 910 ₽' },
-  { amount: '50 000 ₽', discount: '20%', example: '3 680 ₽' },
-  { amount: '70 000 ₽', discount: '25%', example: '3 450 ₽' },
-  { amount: '100 000 ₽', discount: '30%', example: '3 220 ₽' },
+  { amount: '20 000 ₽', discount: '10%', example: '4 140 ₽', regular: '4 600 ₽' },
+  { amount: '30 000 ₽', discount: '15%', example: '3 910 ₽', regular: '4 600 ₽' },
+  { amount: '50 000 ₽', discount: '20%', example: '3 680 ₽', regular: '4 600 ₽' },
+  { amount: '70 000 ₽', discount: '25%', example: '3 450 ₽', regular: '4 600 ₽' },
+  { amount: '100 000 ₽', discount: '30%', example: '3 220 ₽', regular: '4 600 ₽' },
 ];
+
+function serviceWord(count: number) {
+  if (count % 10 === 1 && count % 100 !== 11) return 'услуга';
+  if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'услуги';
+  return 'услуг';
+}
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -182,13 +188,21 @@ export default function Home() {
         <img className="hero-image" src="./images/hero.jpg" alt="Тропические листья после дождя" />
         <div className="hero-shade" />
         <div className="hero-content shell">
-          <p className="eyebrow">Спа-салон в Королёве</p>
-          <h1>Место, где<br />тело выдыхает</h1>
-          <p className="hero-lead">Тайские, балийские и русские мастера. Массажи и SPA-ритуалы, которые начинаются с заботы и заканчиваются неспешным чаепитием.</p>
+          <p className="eyebrow">Массаж и SPA в Королёве</p>
+          <h1>Jungle Spa</h1>
+          <p className="hero-kicker">Место, где тело выдыхает</p>
+          <p className="hero-lead">Тайские, балийские и русские мастера, бережные SPA-ритуалы и спокойное чаепитие после каждого сеанса.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="https://wa.me/79154501155" target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true" /> Записаться в WhatsApp</a>
-            <a className="button button-quiet" href="#services">Смотреть услуги <ArrowDown aria-hidden="true" /></a>
+            <a className="button button-quiet" href="#services">Услуги и цены <ArrowDown aria-hidden="true" /></a>
           </div>
+          <nav className="hero-shortcuts" aria-label="Быстрая навигация по странице">
+            <a href="#ritual">Атмосфера</a>
+            <a href="#masters">Мастера</a>
+            <a href="#passes">Абонементы</a>
+            <a href="#gift">Сертификаты</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
           <div className="hero-note">
             <span>Азиатские и русские мастера</span><span>ул. Исаева, 7</span><span>от 1 600 ₽</span>
           </div>
@@ -236,10 +250,13 @@ export default function Home() {
             {serviceGroups.map((group) => (
               <AccordionItem key={group.id} value={group.id} className="service-group">
                 <AccordionTrigger className="service-trigger">
-                  <span>{group.title}</span><small>{group.services.length} {group.services.length === 1 ? 'услуга' : 'услуг'}</small>
+                  <span className="service-trigger-copy">
+                    <strong>{group.title}</strong>
+                    <span>{group.intro}</span>
+                  </span>
+                  <small><strong>{group.services.length}</strong> {serviceWord(group.services.length)}</small>
                 </AccordionTrigger>
                 <AccordionContent className="service-panel">
-                  <p className="group-intro">{group.intro}</p>
                   <div className="service-list">
                     {group.services.map((service) => (
                       <article className="service-row" key={service.name}>
@@ -249,6 +266,7 @@ export default function Home() {
                           {service.note && <p className="service-note">{service.note}</p>}
                         </div>
                         <div className="price-list" aria-label={`Цены на ${service.name}`}>
+                          <div className="price-list-head"><span>Длительность</span><span>Стоимость</span></div>
                           {service.prices.map((price) => <div className="price" key={`${price.time}-${price.value}`}><span><Clock3 aria-hidden="true" />{price.time}</span><strong>{price.value}</strong></div>)}
                         </div>
                       </article>
@@ -262,7 +280,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="gift-section">
+      <section className="gift-section" id="gift">
         <img src="./images/ritual.jpg" alt="Подарочные сертификаты Jungle Spa" />
         <div className="gift-overlay" />
         <div className="gift-content shell"><Gift aria-hidden="true" /><p className="eyebrow">Подарочный сертификат</p><h2>Подарите несколько часов тишины</h2><p>Выберите конкретный ритуал или подходящий номинал вместе с администратором. Сертификат можно заказать в WhatsApp.</p><a className="button button-primary" href="https://wa.me/79154501155" target="_blank" rel="noreferrer">Выбрать сертификат</a></div>
@@ -281,7 +299,11 @@ export default function Home() {
         <div className="shell pass-layout">
           <div className="pass-copy"><p className="eyebrow">Абонементы</p><h2>Чем чаще приходите, тем выгоднее</h2><p>Балансом абонемента могут пользоваться несколько человек. Скидка применяется к процедурам согласно выбранному номиналу.</p><div className="pass-icons"><span><Users aria-hidden="true" /> Можно делиться</span><span><Sparkles aria-hidden="true" /> Скидка до 30%</span></div></div>
           <div className="pass-table-wrap">
-            <table className="pass-table"><caption>Скидки по абонементам Jungle Spa</caption><thead><tr><th>Оплата</th><th>Скидка</th><th>Балийский релакс, 1 ч</th></tr></thead><tbody>{passes.map((pass) => <tr key={pass.amount}><td>{pass.amount}</td><td><strong>{pass.discount}</strong></td><td>{pass.example}</td></tr>)}</tbody></table>
+            <table className="pass-table">
+              <caption>Скидки по абонементам Jungle Spa</caption>
+              <thead><tr><th scope="col">Номинал</th><th scope="col">Скидка</th><th scope="col"><span>Наглядный пример</span><small>«Балийский релакс» · 1 час</small></th></tr></thead>
+              <tbody>{passes.map((pass) => <tr key={pass.amount}><td>{pass.amount}</td><td><strong>{pass.discount}</strong></td><td><span className="pass-example"><strong>{pass.example}</strong><del aria-label={`Обычная цена ${pass.regular}`}>{pass.regular}</del></span></td></tr>)}</tbody>
+            </table>
             <ul className="pass-terms"><li>20 000 и 30 000 ₽ — срок действия 6 месяцев.</li><li>50 000, 70 000 и 100 000 ₽ — срок действия 1 год.</li><li>Скидка не распространяется на косметику и организацию мероприятий.</li><li>Для программ на двоих действует особое условие — уточните размер скидки у администратора.</li></ul>
           </div>
         </div>
