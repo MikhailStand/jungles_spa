@@ -148,12 +148,15 @@ const masters = [
 ];
 
 const gallery = [
-  { image: './images/gallery-2.jpg', alt: 'Массаж рук с ароматным маслом', caption: 'Тёплые масла и спокойный ритм' },
-  { image: './images/gallery-1.jpg', alt: 'Чайная церемония с орхидеей', caption: 'Чай после каждого сеанса' },
-  { image: './images/ritual.jpg', alt: 'Атмосфера SPA-ритуала Jungle Spa', caption: 'Ритуалы для тела и отдыха' },
-  { image: './images/hero.jpg', alt: 'Тропические листья после дождя', caption: 'Зелень и тишина посреди города' },
-  { image: './images/master-1.png', alt: 'Балийский мастер Jungle Spa', caption: 'Тайские и балийские мастера' },
-  { image: './images/master-4.jpg', alt: 'Мастер Оксана в интерьере Jungle Spa', caption: 'Русские мастера с медицинским образованием' },
+  { image: './images/about-1.jpg', alt: 'Чайная церемония в SPA-салоне', caption: 'Чайная церемония после сеанса' },
+  { image: './images/about-2.jpg', alt: 'Массаж рук с эфирными маслами', caption: 'Массаж рук с эфирными маслами' },
+  { image: './images/about-3.jpg', alt: 'Свечи и элементы интерьера Jungle Spa', caption: 'Тёплый свет и ароматические свечи' },
+  { image: './images/about-4.jpg', alt: 'Подготовленный массажный стол с полотенцами', caption: 'Массажный кабинет' },
+  { image: './images/about-5.jpg', alt: 'Омовение ног перед массажем', caption: 'Омовение ног перед сеансом' },
+  { image: './images/about-6.jpg', alt: 'Балийский мастер выполняет массаж ног', caption: 'Балийские техники массажа' },
+  { image: './images/about-7.jpg', alt: 'Гостья отдыхает после SPA-процедуры', caption: 'Отдых после SPA-процедуры' },
+  { image: './images/about-8.jpg', alt: 'Массаж шеи и головы', caption: 'Массаж шеи и головы' },
+  { image: './images/about-9.jpg', alt: 'Коллекция ароматных масел Jungle Spa', caption: 'Ароматные масла для ритуалов' },
 ];
 
 const passes = [
@@ -182,7 +185,7 @@ export default function Home() {
           <span>Jungle Spa</span>
         </a>
         <nav className={menuOpen ? 'nav is-open' : 'nav'} aria-label="Основная навигация">
-          <a href="#ritual" onClick={closeMenu}>О нас</a>
+          <a href="#about" onClick={closeMenu}>О нас</a>
           <a href="#services" onClick={closeMenu}>Услуги</a>
           <a href="#masters" onClick={closeMenu}>Мастера</a>
           <a href="#passes" onClick={closeMenu}>Абонементы</a>
@@ -207,7 +210,7 @@ export default function Home() {
             <a className="button button-quiet" href="#services">Услуги и цены <ArrowDown aria-hidden="true" /></a>
           </div>
           <nav className="hero-shortcuts" aria-label="Быстрая навигация по странице">
-            <a href="#ritual">О нас</a>
+            <a href="#about">О нас</a>
             <a href="#masters">Мастера</a>
             <a href="#passes">Абонементы</a>
             <a href="#gift">Сертификаты</a>
@@ -217,6 +220,29 @@ export default function Home() {
             <span>Азиатские и русские мастера</span><span>ул. Исаева, 7</span><span>от 1 600 ₽</span>
           </div>
         </div>
+      </section>
+
+      <section className="about-gallery section" id="about" aria-labelledby="about-gallery-title">
+        <div className="about-gallery-head shell">
+          <div><p className="eyebrow">Атмосфера в деталях</p><h2 id="about-gallery-title">Загляните в Jungle Spa</h2></div>
+          <p>Листайте фотографии салона, ритуалов и мастеров.</p>
+        </div>
+        <Carousel className="about-carousel" opts={{ align: 'start', loop: true }}>
+          <CarouselContent className="about-gallery-track">
+            {gallery.map((photo) => (
+              <CarouselItem className="about-gallery-slide" key={`${photo.image}-${photo.caption}`}>
+                <figure>
+                  <img src={photo.image} alt={photo.alt} loading="lazy" />
+                  <figcaption>{photo.caption}</figcaption>
+                </figure>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="about-gallery-controls">
+            <CarouselPrevious className="about-gallery-button" aria-label="Предыдущие фотографии" />
+            <CarouselNext className="about-gallery-button" aria-label="Следующие фотографии" />
+          </div>
+        </Carousel>
       </section>
 
       <section className="intro section shell" id="ritual">
@@ -241,29 +267,6 @@ export default function Home() {
             <p>Перед массажем — горячие полотенца, после — чай. В работе мастер использует масло или крем.</p>
           </div>
         </article>
-      </section>
-
-      <section className="about-gallery section" aria-labelledby="about-gallery-title">
-        <div className="about-gallery-head shell">
-          <div><p className="eyebrow">Атмосфера в деталях</p><h2 id="about-gallery-title">Загляните в Jungle Spa</h2></div>
-          <p>Листайте фотографии салона, ритуалов и мастеров.</p>
-        </div>
-        <Carousel className="about-carousel" opts={{ align: 'start', loop: true }}>
-          <CarouselContent className="about-gallery-track">
-            {gallery.map((photo) => (
-              <CarouselItem className="about-gallery-slide" key={`${photo.image}-${photo.caption}`}>
-                <figure>
-                  <img src={photo.image} alt={photo.alt} loading="lazy" />
-                  <figcaption>{photo.caption}</figcaption>
-                </figure>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <div className="about-gallery-controls">
-            <CarouselPrevious className="about-gallery-button" aria-label="Предыдущие фотографии" />
-            <CarouselNext className="about-gallery-button" aria-label="Следующие фотографии" />
-          </div>
-        </Carousel>
       </section>
 
       <section className="featured section">
