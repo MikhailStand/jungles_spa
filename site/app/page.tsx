@@ -134,9 +134,9 @@ const serviceGroups: ServiceGroup[] = [
 ];
 
 const featured = [
-  { name: 'Балийский релакс', text: 'Мягкий масляный массаж для глубокого расслабления и перезагрузки.', time: '60–120 мин', price: 'от 4 600 ₽' },
-  { name: 'Традиционный тайский', text: 'Йога-массаж в тайской пижаме: работа с телом без масел.', time: '60–120 мин', price: 'от 4 400 ₽' },
-  { name: 'SPA для двоих', text: 'Совместные ритуалы с фитобочкой, массажем и уходом за телом.', time: '2,5–3 часа', price: 'от 15 000 ₽' },
+  { goal: 'Хочу расслабиться', name: 'Балийский релакс', text: 'Мягкий масляный массаж, когда хочется снять напряжение и спокойно перезагрузиться.', time: '60–120 минут', price: 'от 4 600 ₽', href: '#category-massage' },
+  { goal: 'Нужна глубокая проработка', name: 'Традиционный тайский', text: 'Йога-массаж в тайской пижаме для уставшего тела. Выполняется без масла.', time: '60–120 минут', price: 'от 4 400 ₽', href: '#category-massage' },
+  { goal: 'Хочу отдохнуть вдвоём', name: 'SPA для двоих', text: 'Совместный ритуал с фитобочкой, массажем и уходом за телом в одном ритме.', time: '2,5–3 часа', price: 'от 15 000 ₽', href: '#category-couples' },
 ];
 
 const masters = [
@@ -172,8 +172,8 @@ export default function Home() {
           <span>Jungle Spa</span>
         </a>
         <nav className={menuOpen ? 'nav is-open' : 'nav'} aria-label="Основная навигация">
+          <a href="#ritual" onClick={closeMenu}>О нас</a>
           <a href="#services" onClick={closeMenu}>Услуги</a>
-          <a href="#ritual" onClick={closeMenu}>Ритуал</a>
           <a href="#masters" onClick={closeMenu}>Мастера</a>
           <a href="#passes" onClick={closeMenu}>Абонементы</a>
           <a href="#contacts" onClick={closeMenu}>Контакты</a>
@@ -197,7 +197,7 @@ export default function Home() {
             <a className="button button-quiet" href="#services">Услуги и цены <ArrowDown aria-hidden="true" /></a>
           </div>
           <nav className="hero-shortcuts" aria-label="Быстрая навигация по странице">
-            <a href="#ritual">Атмосфера</a>
+            <a href="#ritual">О нас</a>
             <a href="#masters">Мастера</a>
             <a href="#passes">Абонементы</a>
             <a href="#gift">Сертификаты</a>
@@ -210,10 +210,9 @@ export default function Home() {
       </section>
 
       <section className="intro section shell" id="ritual">
-        <div><p className="eyebrow dark">Расслабим тело и душу</p><h2>Джунгли посреди города</h2></div>
+        <div className="intro-heading"><p className="eyebrow dark">Расслабим тело и душу</p><h2>Джунгли посреди города</h2></div>
         <div className="intro-copy">
           <p>Здесь пахнет имбирём и маслами, тихо играет музыка, а каждая процедура складывается в цельный ритуал — от омовения ног или горячих полотенец до имбирного напитка после сеанса.</p>
-          <a className="text-link" href="tel:+79154501155"><Phone aria-hidden="true" /> +7 915 450-11-55</a>
         </div>
       </section>
 
@@ -236,9 +235,22 @@ export default function Home() {
 
       <section className="featured section">
         <div className="shell">
-          <div className="section-heading"><div><p className="eyebrow dark">Выберите свой ритм</p><h2>С чего начать</h2></div><p>Три разных сценария знакомства с Jungle Spa.</p></div>
+          <div className="section-heading"><div><p className="eyebrow dark">Подберите по настроению</p><h2>Что хочется сейчас?</h2></div><p>Выберите ближайшее состояние — мы сразу покажем подходящий раздел услуг.</p></div>
           <div className="featured-grid">
-            {featured.map((service) => <article className="featured-card" key={service.name}><div><p className="service-time">{service.time}</p><h3>{service.name}</h3><p>{service.text}</p></div><strong>{service.price}</strong></article>)}
+            {featured.map((service) => (
+              <a className="featured-card" href={service.href} key={service.name} aria-label={`${service.goal}: ${service.name}`}>
+                <div>
+                  <p className="service-time">{service.goal}</p>
+                  <h3>{service.name}</h3>
+                  <p>{service.text}</p>
+                </div>
+                <div className="featured-card-footer">
+                  <span>{service.time}</span>
+                  <strong>{service.price}</strong>
+                  <ArrowDown aria-hidden="true" />
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -248,7 +260,7 @@ export default function Home() {
           <div className="catalog-head"><div><p className="eyebrow dark">Все услуги и цены</p><h2>Найдите свой ритуал</h2></div><p>Нажмите на категорию, чтобы посмотреть состав, длительность и точную стоимость каждой процедуры.</p></div>
           <Accordion className="service-accordion" multiple defaultValue={['massage']}>
             {serviceGroups.map((group) => (
-              <AccordionItem key={group.id} value={group.id} className="service-group">
+              <AccordionItem key={group.id} value={group.id} className="service-group" id={`category-${group.id}`}>
                 <AccordionTrigger className="service-trigger">
                   <span className="service-trigger-copy">
                     <strong>{group.title}</strong>
@@ -305,17 +317,6 @@ export default function Home() {
               <tbody>{passes.map((pass) => <tr key={pass.amount}><td>{pass.amount}</td><td><strong>{pass.discount}</strong></td><td><span className="pass-example"><strong>{pass.example}</strong><del aria-label={`Обычная цена ${pass.regular}`}>{pass.regular}</del></span></td></tr>)}</tbody>
             </table>
             <ul className="pass-terms"><li>20 000 и 30 000 ₽ — срок действия 6 месяцев.</li><li>50 000, 70 000 и 100 000 ₽ — срок действия 1 год.</li><li>Скидка не распространяется на косметику и организацию мероприятий.</li><li>Для программ на двоих действует особое условие — уточните размер скидки у администратора.</li></ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="reviews section">
-        <div className="shell">
-          <div className="section-heading"><div><p className="eyebrow dark">Впечатления гостей</p><h2>После массажа мир становится тише</h2></div></div>
-          <div className="review-grid">
-            <article><p>После сочетания точечного тайского и балийского массажа гостья отметила глубокое расслабление и снятие напряжения.</p><span>@daria_dashkevich_hairdresser</span></article>
-            <article><p>В отзыве особенно выделили приятную атмосферу, внимательный персонал и ощущение бодрости после сеанса.</p><span>@lena_kukhareva</span></article>
-            <article><p>Комплекс с парением, скрабированием и массажем запомнился как цельный, насыщенный SPA-ритуал.</p><span>@dr.kozak</span></article>
           </div>
         </div>
       </section>
