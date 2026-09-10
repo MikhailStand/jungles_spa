@@ -224,8 +224,8 @@ export default function Home() {
 
       <section className="about-gallery section" id="about" aria-labelledby="about-gallery-title">
         <div className="about-gallery-head shell">
-          <div><p className="eyebrow">Атмосфера в деталях</p><h2 id="about-gallery-title">Загляните в Jungle Spa</h2></div>
-          <p>Листайте фотографии салона, ритуалов и мастеров.</p>
+          <div><p className="eyebrow">Расслабим тело и душу</p><h2 id="about-gallery-title">Джунгли посреди города</h2></div>
+          <p>Здесь пахнет имбирём и маслами, тихо играет музыка, а каждая процедура складывается в цельный ритуал — от омовения ног или горячих полотенец до имбирного напитка после сеанса.</p>
         </div>
         <Carousel className="about-carousel" opts={{ align: 'start', loop: true }}>
           <CarouselContent className="about-gallery-track">
@@ -245,13 +245,6 @@ export default function Home() {
             <CarouselNext className="about-gallery-button" aria-label="Следующие фотографии" />
           </div>
         </Carousel>
-      </section>
-
-      <section className="intro section shell" id="ritual">
-        <div className="intro-heading"><p className="eyebrow dark">Расслабим тело и душу</p><h2>Джунгли посреди города</h2></div>
-        <div className="intro-copy">
-          <p>Здесь пахнет имбирём и маслами, тихо играет музыка, а каждая процедура складывается в цельный ритуал — от омовения ног или горячих полотенец до имбирного напитка после сеанса.</p>
-        </div>
       </section>
 
       <section className="featured section">

@@ -83,10 +83,6 @@ p { margin: 0; }
 .hero-note span { position: relative; }
 .hero-note span:not(:last-child)::after { content: ''; position: absolute; right: -18px; top: 50%; width: 3px; height: 3px; border-radius: 50%; background: var(--gold); }
 
-.intro { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start; }
-.intro-heading, .intro h2 { max-width: 1040px; }
-.intro-copy { max-width: 1120px; }
-.intro-copy > p { font-size: clamp(1.22rem, 1.8vw, 1.55rem); line-height: 1.55; }
 .text-link { display: inline-flex; min-height: 48px; align-items: center; gap: 10px; margin-top: 28px; color: var(--forest-2); font-weight: 750; }
 
 .featured { background: var(--sage); }
@@ -227,7 +223,6 @@ footer .brand img { width: 40px; height: 40px; }
   .menu-button { display: inline-flex; }
   .hero { min-height: 760px; }
   .hero-shade { background: radial-gradient(circle at 50% 40%, rgba(45,86,66,.12), rgba(13,43,34,.62) 66%, rgba(9,34,27,.8) 100%); }
-  .intro { grid-template-columns: 1fr; gap: 38px; }
   .about-gallery-head { grid-template-columns: 1fr; gap: 20px; }
   .about-gallery-slide { flex-basis: 50%; }
   .featured-grid { grid-template-columns: 1fr; }
