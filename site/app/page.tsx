@@ -232,7 +232,10 @@ export default function Home() {
             {gallery.map((photo) => (
               <CarouselItem className="about-gallery-slide" key={`${photo.image}-${photo.caption}`}>
                 <figure>
-                  <img src={photo.image} alt={photo.alt} loading="lazy" />
+                  <div className="about-gallery-image">
+                    <img className="about-gallery-backdrop" src={photo.image} alt="" aria-hidden="true" loading="lazy" />
+                    <img className="about-gallery-photo" src={photo.image} alt={photo.alt} loading="lazy" />
+                  </div>
                   <figcaption>{photo.caption}</figcaption>
                 </figure>
               </CarouselItem>
@@ -358,7 +361,7 @@ export default function Home() {
 
       <section className="contacts section" id="contacts">
         <div className="shell contact-layout">
-          <div><p className="eyebrow">Контакты</p><h2>Ваши джунгли — в Королёве</h2><p>Напишите администратору, чтобы подобрать программу, мастера и удобное время.</p></div>
+          <div><p className="eyebrow">Контакты</p><h2>Ваше место для релакса — в Королёве</h2><p>Напишите администратору, чтобы подобрать программу, мастера и удобное время.</p></div>
           <address className="contact-card">
             <a href="tel:+79154501155"><Phone aria-hidden="true" /><span><small>Позвонить</small>+7 915 450-11-55</span></a>
             <a href="mailto:junglespa@yandex.ru"><Mail aria-hidden="true" /><span><small>Написать на почту</small>junglespa@yandex.ru</span></a>
