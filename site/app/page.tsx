@@ -360,7 +360,7 @@ export default function Home() {
 
       <section className="contacts section" id="contacts">
         <div className="shell contact-layout">
-          <div><p className="eyebrow">Контакты</p><h2>Ваше место для релакса — в Королёве</h2><p>Напишите администратору, чтобы подобрать программу, мастера и удобное время.</p></div>
+          <div><p className="eyebrow">Контакты</p><h2>Ваш релакс — в Королёве</h2><p>Напишите администратору, чтобы подобрать программу, мастера и удобное время.</p></div>
           <address className="contact-card">
             <a href="tel:+79154501155"><Phone aria-hidden="true" /><span><small>Позвонить</small>+7 915 450-11-55</span></a>
             <a href="mailto:junglespa@yandex.ru"><Mail aria-hidden="true" /><span><small>Написать на почту</small>junglespa@yandex.ru</span></a>

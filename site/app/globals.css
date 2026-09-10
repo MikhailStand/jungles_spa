@@ -179,9 +179,9 @@ p { margin: 0; }
 .master-origin { color: #8d6421; font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 
 .passes { background: var(--forest-deep); color: white; }
-.pass-layout { display: grid; grid-template-columns: .95fr 1.25fr; gap: clamp(56px, 7vw, 104px); align-items: start; }
+.pass-layout { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(44px, 5vw, 72px); align-items: start; }
 .pass-copy { position: sticky; top: 116px; }
-.pass-copy h2 { max-width: 650px; }
+.pass-copy h2 { max-width: 760px; font-size: clamp(2.65rem, 4vw, 4.2rem); }
 .pass-copy > p:not(.eyebrow) { max-width: 530px; margin-top: 26px; color: rgba(255,255,255,.7); }
 .pass-icons { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 30px; }
 .pass-icons span { display: inline-flex; align-items: center; gap: 8px; color: #f0cb7f; font-size: .88rem; font-weight: 700; }
@@ -219,6 +219,11 @@ footer .shell { display: grid; grid-template-columns: 1fr auto auto; gap: 34px; 
 footer .brand { color: white; }
 footer .brand img { width: 40px; height: 40px; }
 
+@media (max-width: 1100px) {
+  .pass-layout { grid-template-columns: 1fr; }
+  .pass-copy { position: static; }
+}
+
 @media (max-width: 900px) {
   .site-header { grid-template-columns: 1fr auto; }
   .nav { position: absolute; inset: 76px 0 auto; display: none; flex-direction: column; align-items: stretch; gap: 2px; padding: 18px 24px 28px; background: rgba(23,54,44,.99); border-top: 1px solid rgba(255,255,255,.1); }
@@ -248,7 +253,8 @@ footer .brand img { width: 40px; height: 40px; }
   .brand span { font-size: .92rem; }
   .nav { top: 70px; padding-inline: 16px; }
   h1 { font-size: clamp(3.65rem, 18vw, 5rem); }
-  h2 { font-size: clamp(2.45rem, 12vw, 3.6rem); }
+  h2 { max-width: 100%; font-size: clamp(1.95rem, 8.8vw, 2.7rem); line-height: 1.06; }
+  .pass-copy h2 { max-width: 100%; font-size: clamp(1.95rem, 8.8vw, 2.7rem); }
   .hero { min-height: 790px; height: 100svh; }
   .hero-content { padding-top: 104px; padding-bottom: 22px; }
   .hero-content .eyebrow { margin-bottom: 20px; }
