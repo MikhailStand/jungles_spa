@@ -294,13 +294,12 @@ export default function Home() {
       <section className="catalog section" id="services">
         <div className="shell">
           <div className="catalog-head"><div><p className="eyebrow dark">Все услуги и цены</p><h2>Найдите свой ритуал</h2></div><p>Нажмите на категорию, чтобы посмотреть состав, длительность и точную стоимость каждой процедуры.</p></div>
-          <Accordion className="service-accordion" multiple defaultValue={['massage']}>
+          <Accordion className="service-accordion" multiple>
             {serviceGroups.map((group) => (
               <AccordionItem key={group.id} value={group.id} className="service-group" id={`category-${group.id}`}>
                 <AccordionTrigger className="service-trigger">
                   <span className="service-trigger-copy">
                     <strong>{group.title}</strong>
-                    <span>{group.intro}</span>
                   </span>
                   <small><strong>{group.services.length}</strong> {serviceWord(group.services.length)}</small>
                 </AccordionTrigger>
