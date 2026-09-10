@@ -233,7 +233,6 @@ export default function Home() {
               <CarouselItem className="about-gallery-slide" key={`${photo.image}-${photo.caption}`}>
                 <figure>
                   <div className="about-gallery-image">
-                    <img className="about-gallery-backdrop" src={photo.image} alt="" aria-hidden="true" loading="lazy" />
                     <img className="about-gallery-photo" src={photo.image} alt={photo.alt} loading="lazy" />
                   </div>
                   <figcaption>{photo.caption}</figcaption>
