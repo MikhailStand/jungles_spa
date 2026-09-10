@@ -254,23 +254,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="ritual-grid shell" aria-label="Особенности ритуалов">
-        <article className="ritual-card ritual-asian">
-          <div className="ritual-photo"><img src="./images/gallery-2.jpg" alt="Массаж рук с маслом" /></div>
-          <div className="ritual-copy">
-            <p className="eyebrow dark">Азиатские джунгли</p><h3>Тайские и балийские мастера</h3>
-            <p>Сеанс начинается с омовения ног и завершается чайной церемонией с имбирным напитком.</p>
-          </div>
-        </article>
-        <article className="ritual-card ritual-city">
-          <div className="ritual-photo"><img src="./images/gallery-1.jpg" alt="Чайная церемония после SPA-процедуры" /></div>
-          <div className="ritual-copy">
-            <p className="eyebrow dark">Городские джунгли</p><h3>Русские мастера</h3>
-            <p>Перед массажем — горячие полотенца, после — чай. В работе мастер использует масло или крем.</p>
-          </div>
-        </article>
-      </section>
-
       <section className="featured section">
         <div className="shell">
           <div className="section-heading"><div><p className="eyebrow dark">Подберите по настроению</p><h2>Что хочется сейчас?</h2></div><p>Выберите ближайшее состояние — мы сразу покажем подходящий раздел услуг.</p></div>
