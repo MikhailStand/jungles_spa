@@ -15,7 +15,7 @@ import {
   Users,
   X,
 } from 'lucide-react';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
@@ -280,32 +280,36 @@ export default function Home() {
         <div className="shell">
           <div className="catalog-head"><div><p className="eyebrow dark">Все услуги и цены</p><h2>Найдите свой ритуал</h2></div><p>Нажмите на категорию, чтобы посмотреть состав, длительность и точную стоимость каждой процедуры.</p></div>
           <Accordion className="service-accordion" multiple>
-            {serviceGroups.map((group) => (
-              <AccordionItem key={group.id} value={group.id} className="service-group" id={`category-${group.id}`}>
-                <AccordionTrigger className="service-trigger">
-                  <span className="service-trigger-copy">
-                    <strong>{group.title}</strong>
-                  </span>
-                  <small><strong>{group.services.length}</strong> {serviceWord(group.services.length)}</small>
-                </AccordionTrigger>
-                <AccordionContent className="service-panel">
-                  <div className="service-list">
-                    {group.services.map((service) => (
-                      <article className="service-row" key={service.name}>
-                        <div className="service-main">
-                          <h3>{service.name}</h3><p>{service.description}</p>
-                          {service.details && <ul>{service.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>}
-                          {service.note && <p className="service-note">{service.note}</p>}
-                        </div>
-                        <div className="price-list" aria-label={`Цены на ${service.name}`}>
-                          <div className="price-list-head"><span>Длительность</span><span>Стоимость</span></div>
-                          {service.prices.map((price) => <div className="price" key={`${price.time}-${price.value}`}><span><Clock3 aria-hidden="true" />{price.time}</span><strong>{price.value}</strong></div>)}
-                        </div>
-                      </article>
-                    ))}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+            {serviceGroups.map((group, index) => (
+              <Fragment key={group.id}>
+                {index === 0 && <p className="service-family-label">Азиатские массажи и SPA</p>}
+                {index === serviceGroups.length - 1 && <p className="service-family-label service-family-label-russian">Русские массажи</p>}
+                <AccordionItem value={group.id} className="service-group" id={`category-${group.id}`}>
+                  <AccordionTrigger className="service-trigger">
+                    <span className="service-trigger-copy">
+                      <strong>{group.title}</strong>
+                    </span>
+                    <small><strong>{group.services.length}</strong> {serviceWord(group.services.length)}</small>
+                  </AccordionTrigger>
+                  <AccordionContent className="service-panel">
+                    <div className="service-list">
+                      {group.services.map((service) => (
+                        <article className="service-row" key={service.name}>
+                          <div className="service-main">
+                            <h3>{service.name}</h3><p>{service.description}</p>
+                            {service.details && <ul>{service.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>}
+                            {service.note && <p className="service-note">{service.note}</p>}
+                          </div>
+                          <div className="price-list" aria-label={`Цены на ${service.name}`}>
+                            <div className="price-list-head"><span>Длительность</span><span>Стоимость</span></div>
+                            {service.prices.map((price) => <div className="price" key={`${price.time}-${price.value}`}><span><Clock3 aria-hidden="true" />{price.time}</span><strong>{price.value}</strong></div>)}
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Fragment>
             ))}
           </Accordion>
           <p className="catalog-note">Цены перенесены с прайс-листа действующего сайта. Перед записью администратор подтвердит стоимость выбранной программы.</p>
