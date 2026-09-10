@@ -113,7 +113,7 @@ p { margin: 0; }
 .ritual-copy h3 { align-self: start; }
 .ritual-copy > p:last-child { color: #5d6964; }
 
-.about-gallery { overflow: hidden; background: var(--forest-deep); color: white; }
+.about-gallery { overflow: hidden; padding-block: clamp(68px, 7vw, 96px); background: var(--forest-deep); color: white; }
 .about-gallery-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, .42fr); align-items: end; gap: 48px; margin-bottom: 38px; }
 .about-gallery-head h2 { max-width: 860px; }
 .about-gallery-head > p { max-width: 380px; color: rgba(255,255,255,.72); font-size: 1.05rem; }
@@ -121,7 +121,7 @@ p { margin: 0; }
 .about-gallery-track { margin-left: -18px; }
 .about-gallery-slide { flex-basis: 25%; padding-left: 18px; }
 .about-gallery-slide figure { margin: 0; }
-.about-gallery-slide img { width: 100%; aspect-ratio: 4 / 5; border-radius: 18px 5px 18px 5px; object-fit: cover; object-position: center; background: #294b3d; }
+.about-gallery-slide img { width: 100%; aspect-ratio: 4 / 3; border-radius: 18px 5px 18px 5px; object-fit: cover; object-position: center; background: #294b3d; }
 .about-gallery-slide figcaption { margin-top: 14px; color: rgba(255,255,255,.78); font-size: .92rem; line-height: 1.5; }
 .about-gallery-controls { display: flex; justify-content: flex-end; gap: 12px; margin-top: 28px; }
 .about-gallery-button { position: static !important; inset: auto !important; width: 52px; height: 52px; margin: 0 !important; border-color: rgba(255,255,255,.34); background: transparent; color: white; }
@@ -269,15 +269,16 @@ footer .brand img { width: 40px; height: 40px; }
   .ritual-copy { display: block; padding: 26px; }
   .ritual-copy .eyebrow { margin-bottom: 18px; }
   .ritual-copy h3 { margin-bottom: 18px; }
-  .about-gallery-head { margin-bottom: 30px; }
+  .about-gallery { padding-block: 54px; }
+  .about-gallery-head { margin-bottom: 24px; }
   .about-gallery-head > p { font-size: 1rem; }
   .about-carousel { width: calc(100% - 16px); margin-right: 0; margin-left: 16px; }
   .about-gallery-track { margin-left: -12px; }
-  .about-gallery-slide { flex-basis: 86%; padding-left: 12px; }
-  .about-gallery-slide img { aspect-ratio: 4 / 5; border-radius: 16px 5px 16px 5px; }
+  .about-gallery-slide { flex-basis: 74%; padding-left: 12px; }
+  .about-gallery-slide img { aspect-ratio: 4 / 3; border-radius: 16px 5px 16px 5px; }
   .about-gallery-slide figcaption { padding-right: 12px; font-size: .95rem; }
-  .about-gallery-controls { justify-content: flex-start; margin-top: 24px; }
-  .about-gallery-button { width: 54px; height: 54px; }
+  .about-gallery-controls { justify-content: flex-start; margin-top: 18px; }
+  .about-gallery-button { width: 48px; height: 48px; }
   .catalog-head { margin-bottom: 36px; text-align: left; }
   .catalog-head > p { margin: 18px 0 0; }
   .service-accordion { gap: 8px; }
