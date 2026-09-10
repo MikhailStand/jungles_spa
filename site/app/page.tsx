@@ -305,7 +305,6 @@ export default function Home() {
               </Fragment>
             ))}
           </Accordion>
-          <p className="catalog-note">Цены перенесены с прайс-листа действующего сайта. Перед записью администратор подтвердит стоимость выбранной программы.</p>
         </div>
       </section>
 
