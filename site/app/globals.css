@@ -121,7 +121,7 @@ p { margin: 0; }
 .about-gallery-track { margin-left: -18px; }
 .about-gallery-slide { flex-basis: 25%; padding-left: 18px; }
 .about-gallery-slide figure { margin: 0; }
-.about-gallery-slide img { width: 100%; aspect-ratio: 4 / 3; border-radius: 18px 5px 18px 5px; object-fit: cover; object-position: center; background: #294b3d; }
+.about-gallery-slide img { width: 100%; aspect-ratio: 16 / 10; border-radius: 18px 5px 18px 5px; object-fit: cover; object-position: center; background: #294b3d; }
 .about-gallery-slide figcaption { margin-top: 14px; color: rgba(255,255,255,.78); font-size: .92rem; line-height: 1.5; }
 .about-gallery-controls { display: flex; justify-content: flex-end; gap: 12px; margin-top: 28px; }
 .about-gallery-button { position: static !important; inset: auto !important; width: 52px; height: 52px; margin: 0 !important; border-color: rgba(255,255,255,.34); background: transparent; color: white; }
@@ -274,8 +274,8 @@ footer .brand img { width: 40px; height: 40px; }
   .about-gallery-head > p { font-size: 1rem; }
   .about-carousel { width: calc(100% - 16px); margin-right: 0; margin-left: 16px; }
   .about-gallery-track { margin-left: -12px; }
-  .about-gallery-slide { flex-basis: 74%; padding-left: 12px; }
-  .about-gallery-slide img { aspect-ratio: 4 / 3; border-radius: 16px 5px 16px 5px; }
+  .about-gallery-slide { flex-basis: 64%; padding-left: 12px; }
+  .about-gallery-slide img { aspect-ratio: 16 / 10; border-radius: 16px 5px 16px 5px; }
   .about-gallery-slide figcaption { padding-right: 12px; font-size: .95rem; }
   .about-gallery-controls { justify-content: flex-start; margin-top: 18px; }
   .about-gallery-button { width: 48px; height: 48px; }
@@ -294,11 +294,11 @@ footer .brand img { width: 40px; height: 40px; }
   .price-list-head, .price { padding-inline: 13px; }
   .master-grid { grid-template-columns: 1fr; gap: 14px; }
   .master-card { display: block; overflow: hidden; border: 1px solid rgba(35,53,46,.1); border-radius: 18px; background: var(--paper); box-shadow: 0 12px 30px rgba(23,54,44,.08); }
-  .master-card img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 20%; }
-  .master-card > div { position: static; padding: 20px 20px 22px; background: var(--paper); }
-  .master-origin { margin-bottom: 7px; color: #825b1d; font-size: .78rem; line-height: 1.45; }
-  .master-card h3 { margin: 0 0 10px; font-size: clamp(1.95rem, 8vw, 2.35rem); line-height: 1.05; }
-  .master-card > div > p:last-child { color: #42534c; font-size: 1rem; line-height: 1.58; }
+  .master-card img { width: 100%; height: clamp(160px, 46vw, 210px); aspect-ratio: auto; object-fit: cover; object-position: center 20%; }
+  .master-card > div { position: static; padding: 26px 22px 28px; background: var(--paper); }
+  .master-origin { margin-bottom: 10px; color: #825b1d; font-size: .86rem; line-height: 1.5; }
+  .master-card h3 { margin: 0 0 14px; font-size: clamp(2.2rem, 10vw, 2.85rem); line-height: 1.05; }
+  .master-card > div > p:last-child { color: #42534c; font-size: 1.05rem; line-height: 1.68; }
   .gift-section { min-height: 600px; }
   .pass-table th, .pass-table td { padding: 15px 10px; }
   .pass-table th { font-size: .68rem; }
@@ -313,7 +313,7 @@ footer .brand img { width: 40px; height: 40px; }
 }
 
 @media (max-width: 430px) {
-  .master-card img { aspect-ratio: 16 / 10; }
+  .master-card img { height: clamp(160px, 46vw, 190px); aspect-ratio: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {
