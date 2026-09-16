@@ -217,7 +217,7 @@ export default function Home() {
             <a href="#contacts">Контакты</a>
           </nav>
           <div className="hero-note">
-            <span>Ежедневно, 10:30–21:30</span><span>ул. Исаева, 7</span><span>от 1 600 ₽</span>
+            <span>Ежедневно 10:30–21:30</span><span>ул. Исаева, 7</span><span>от 1 600 ₽</span>
           </div>
         </div>
       </section>
@@ -341,7 +341,7 @@ export default function Home() {
         <div className="shell contact-layout">
           <div><p className="eyebrow">Контакты</p><h2>Ваш релакс — в Королёве</h2><p>Напишите администратору, чтобы подобрать программу, мастера и удобное время.</p></div>
           <div className="contact-card">
-            <div className="contact-hours"><Clock3 aria-hidden="true" /><span><small>Часы работы</small>Ежедневно, 10:30–21:30</span></div>
+            <div className="contact-hours"><Clock3 aria-hidden="true" /><span><small>Часы работы</small>Ежедневно 10:30–21:30</span></div>
             <a href="tel:+79154501155"><Phone aria-hidden="true" /><span><small>Позвонить</small>+7 915 450-11-55</span></a>
             <a href="mailto:junglespa@yandex.ru"><Mail aria-hidden="true" /><span><small>Написать на почту</small>junglespa@yandex.ru</span></a>
             <a href="https://yandex.ru/maps/?text=Московская%20область%2C%20Королёв%2C%20улица%20Исаева%2C%207" target="_blank" rel="noreferrer"><MapPin aria-hidden="true" /><span><small>Построить маршрут</small>Московская область, Королёв,<br />ул. Исаева, 7, пом. 5</span></a>
