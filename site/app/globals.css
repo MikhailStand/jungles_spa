@@ -115,7 +115,7 @@ p { margin: 0; }
 .about-gallery-button:hover { background: var(--cream); color: var(--forest-deep); }
 .about-gallery-button:disabled { opacity: .45; }
 
-.catalog { background: #3c6652; color: #fffaf0; }
+.catalog { background: var(--forest-deep); color: #fffaf0; }
 .catalog-head { max-width: 930px; margin: 0 auto 54px; text-align: center; }
 .catalog .eyebrow.dark { color: #f1cf8e; }
 .catalog-head > p { max-width: 680px; margin: 24px auto 0; color: rgba(255,250,240,.8); }
