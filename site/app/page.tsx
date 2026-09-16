@@ -217,7 +217,7 @@ export default function Home() {
             <a href="#contacts">Контакты</a>
           </nav>
           <div className="hero-note">
-            <span>Азиатские и русские мастера</span><span>ул. Исаева, 7</span><span>от 1 600 ₽</span>
+            <span className="hero-hours">Ежедневно, 10:30–21:30</span><span>ул. Исаева, 7</span><span>от 1 600 ₽</span>
           </div>
         </div>
       </section>
@@ -340,11 +340,12 @@ export default function Home() {
       <section className="contacts section" id="contacts">
         <div className="shell contact-layout">
           <div><p className="eyebrow">Контакты</p><h2>Ваш релакс — в Королёве</h2><p>Напишите администратору, чтобы подобрать программу, мастера и удобное время.</p></div>
-          <address className="contact-card">
+          <div className="contact-card">
+            <div className="contact-hours"><Clock3 aria-hidden="true" /><span><small>Часы работы</small>Ежедневно, 10:30–21:30</span></div>
             <a href="tel:+79154501155"><Phone aria-hidden="true" /><span><small>Позвонить</small>+7 915 450-11-55</span></a>
             <a href="mailto:junglespa@yandex.ru"><Mail aria-hidden="true" /><span><small>Написать на почту</small>junglespa@yandex.ru</span></a>
             <a href="https://yandex.ru/maps/?text=Московская%20область%2C%20Королёв%2C%20улица%20Исаева%2C%207" target="_blank" rel="noreferrer"><MapPin aria-hidden="true" /><span><small>Построить маршрут</small>Московская область, Королёв,<br />ул. Исаева, 7, пом. 5</span></a>
-          </address>
+          </div>
           <div className="contact-actions"><a className="button button-primary" href="https://wa.me/79154501155" target="_blank" rel="noreferrer"><MessageCircle aria-hidden="true" /> Записаться в WhatsApp</a><a className="button button-telegram" href="https://t.me/junglespa" target="_blank" rel="noreferrer">Открыть Telegram</a></div>
         </div>
       </section>

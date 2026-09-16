@@ -82,6 +82,7 @@ p { margin: 0; }
 .hero-note { display: flex; justify-content: center; gap: 34px; margin-top: auto; color: rgba(255,255,255,.76); font-size: .88rem; }
 .hero-note span { position: relative; }
 .hero-note span:not(:last-child)::after { content: ''; position: absolute; right: -18px; top: 50%; width: 3px; height: 3px; border-radius: 50%; background: var(--gold); }
+.hero-note .hero-hours { color: white; font-size: 1rem; font-weight: 700; }
 
 .text-link { display: inline-flex; min-height: 48px; align-items: center; gap: 10px; margin-top: 28px; color: var(--forest-2); font-weight: 750; }
 
@@ -194,7 +195,7 @@ p { margin: 0; }
 .contact-layout h2 { max-width: 720px; }
 .contact-layout > div:first-child > p:not(.eyebrow) { max-width: 500px; margin-top: 24px; color: rgba(255,255,255,.68); }
 .contact-card { display: grid; margin: 0; border-top: 1px solid rgba(255,255,255,.15); font-style: normal; }
-.contact-card a { display: grid; grid-template-columns: 28px 1fr; gap: 16px; align-items: start; padding: 20px 2px; border-bottom: 1px solid rgba(255,255,255,.15); font-size: 1.03rem; }
+.contact-card a, .contact-hours { display: grid; grid-template-columns: 28px 1fr; gap: 16px; align-items: start; padding: 20px 2px; border-bottom: 1px solid rgba(255,255,255,.15); font-size: 1.03rem; }
 .contact-card a:hover { color: #f0cb7f; }
 .contact-card svg { width: 20px; height: 20px; margin-top: 5px; color: var(--gold); }
 .contact-card span { display: grid; }
