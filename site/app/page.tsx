@@ -217,7 +217,7 @@ export default function Home() {
             <a href="#contacts">Контакты</a>
           </nav>
           <div className="hero-note">
-            <span className="hero-hours">Ежедневно, 10:30–21:30</span><span>ул. Исаева, 7</span><span>от 1 600 ₽</span>
+            <span>Ежедневно, 10:30–21:30</span><span>ул. Исаева, 7</span><span>от 1 600 ₽</span>
           </div>
         </div>
       </section>
