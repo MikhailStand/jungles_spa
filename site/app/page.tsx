@@ -160,16 +160,16 @@ const gallery = [
 ];
 
 const reviews = [
-  { name: 'nel1sun', initial: 'N', date: '13 апреля', text: 'Получила глубокое расслабление и необходимую проработку спины — именно за таким результатом и пришла.' },
-  { name: 'Маргарита', initial: 'М', date: '3 мая', text: 'Вернулась в салон второй раз: после массажа попробовала комплекс с омовением ног, фитобочкой и скрабированием.' },
-  { name: 'Милана Пантелеева', initial: 'М', date: '30 октября 2025', text: 'Особенно отметила полное погружение в атмосферу: тишину, ароматы и продуманные детали.' },
-  { name: 'Margarita SH', initial: 'M', date: '12 декабря 2025', text: 'Первый балийский массаж понравился: деликатный приём, сильный мастер и комфортная интенсивность.' },
-  { name: 'Валентина', initial: 'В', date: '18 сентября', text: 'После первого визита вернулась вместе с мужем. Трёхчасовая программа и работа Нан и Эки впечатлили обоих.' },
-  { name: 'Nastya', initial: 'N', date: '31 марта 2025', text: 'Ценит салон за тайскую атмосферу, ароматы и интерьер; также дарила мужу сертификат на балийский массаж.' },
-  { name: 'Света', initial: 'С', date: '11 ноября 2024', text: 'Прошла курс тайского массажа по абонементу и отметила аутентичную атмосферу и разные техники мастеров.' },
-  { name: 'Анна Б.', initial: 'А', date: '21 июня 2025', text: 'Ходит в салон около двух лет и ценит стабильное качество, выбор массажей и возможность расслабиться в кедровой бочке.' },
-  { name: 'Дмитрий К.', initial: 'Д', date: '17 марта', text: 'Выбирает Jungle Spa в Королёве за качество мастеров, внимание к деталям и заботливый подход.' },
-  { name: 'Артём Плескушкин', initial: 'А', date: '26 декабря 2025', text: 'Отметил опыт мастера, аккуратную работу, хороший выбор масел и приятное общение с администратором.' },
+  { name: 'nel1sun', initial: 'N', date: '13 апреля', text: 'Джунгли моя любовь — массаж был просто восторг, я получила именно тот релакс и проработку, о которых мечтала…', url: 'https://reviews.yandex.ru/user/y3eza5m0aug29fyarzzumb46u4?utm_source=org&main_tab=org&boostId=/sprav/151408429344' },
+  { name: 'Маргарита', initial: 'М', date: '3 мая', text: 'Только что вышла после массажа. Уже второй раз муж дарит сертификат. В прошлый раз был массаж, а в этот раз комплекс…', url: 'https://reviews.yandex.ru/user/41naa3xnez1ky6xrdd56nknww4?utm_source=org&main_tab=org&boostId=/sprav/151408429344' },
+  { name: 'Милана Пантелеева', initial: 'М', date: '30 октября 2025', text: 'До сих пор отхожу от релакса… Открываешь дверь и просто оказываешься в другом мире. Без суеты, серости, сырости…', url: 'https://reviews.yandex.ru/user/milanaelectro?utm_source=org&main_tab=org&boostId=/sprav/151408429344' },
+  { name: 'Margarita SH', initial: 'M', date: '12 декабря 2025', text: 'Приходила 10.12.25 на балийский массаж на 1,5 часа. Первый опыт такого вида массажа, очень понравилось. Приветливый администратор, мастер на высшем уровне…', url: 'https://reviews.yandex.ru/user/a18uu36d5jjnxh1tjhnpeju6br?utm_source=org&main_tab=org&boostId=/sprav/151408429344' },
+  { name: 'Валентина', initial: 'В', date: '18 сентября', text: 'Первое посещение я была одна, подарок на др. Второе я уговорила, сама в шоке как так получилось, мужа…', url: 'https://reviews.yandex.ru/user/gddujrfm73v7jvzj938faqvgem?utm_source=org&main_tab=org&boostId=/sprav/151408429344' },
+  { name: 'Nastya', initial: 'N', date: '31 марта 2025', text: 'Мой любимый салон тайского массажа. Атмосфера, ароматы, интерьер — все напомнает о Тайланде…', url: 'https://reviews.yandex.ru/user/nzwka11gbp2qt7j2gvwddwqjrg?utm_source=org&main_tab=org&boostId=/sprav/151408429344' },
+  { name: 'Света', initial: 'С', date: '11 ноября 2024', text: 'Ходила на курс тайского массажа по абонементу со скидкой, очень понравилось, приятная аутентичная атмосфера. Побывала у разных мастеров…', url: 'https://reviews.yandex.ru/user/122mbxjtzc67tqnche6zv7zvpc?utm_source=org&main_tab=org&boostId=/sprav/151408429344' },
+  { name: 'Анна Б.', initial: 'А', date: '21 июня 2025', text: 'Отличный салон. Хожу сюда стабильно уже 2 года, массаж всегда на уровне. Прекрасные мастерицы работают, много видов массажа…', url: 'https://reviews.yandex.ru/user/w3qxqygykyvhztqwj5aqmmhw0m?utm_source=org&main_tab=org&boostId=/sprav/151408429344' },
+  { name: 'Дмитрий К.', initial: 'Д', date: '17 марта', text: 'В королеве всегда выбираю именно этот массажный салон. Очень нравится качество работы мастеров. Высокая клиентоориентированность…', url: 'https://reviews.yandex.ru/user/yzz1wmnne21xq8jur6eq1zgm2m?utm_source=org&main_tab=org&boostId=/sprav/151408429344' },
+  { name: 'Артём Плескушкин', initial: 'А', date: '26 декабря 2025', text: 'Все понравилось. Мастер с большим опытом. Аккуратно и бережно сделала свою работу. Выбор масел достаточен. Администратор произвела хорошее впечатление. Возможно приду еще.', url: 'https://reviews.yandex.ru/user/6e23umbe628zc540bmt6m1cc8r?utm_source=org&main_tab=org&boostId=/sprav/151408429344' },
 ];
 
 const reviewsUrl = 'https://yandex.ru/medicine/clinic/dzhungli_spa_151408429344';
@@ -356,8 +356,8 @@ export default function Home() {
               {reviews.map((review) => (
                 <CarouselItem className="review-slide" key={`${review.name}-${review.date}`}>
                   <article className="review-card">
-                    <div className="review-author"><span aria-hidden="true">{review.initial}</span><div><strong>{review.name}</strong><small>{review.date} · Яндекс Карты</small></div></div>
-                    <p>{review.text}</p>
+                    <div className="review-author"><span aria-hidden="true">{review.initial}</span><div><strong>{review.name}</strong><a href={review.url} target="_blank" rel="noreferrer">{review.date} · оригинал на Яндексе ↗</a></div></div>
+                    <p>«{review.text}»</p>
                   </article>
                 </CarouselItem>
               ))}

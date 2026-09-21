@@ -185,7 +185,8 @@ p { margin: 0; }
 .review-author > span { display: grid; width: 48px; height: 48px; flex: 0 0 48px; place-items: center; border-radius: 50%; background: var(--forest-2); color: white; font-weight: 800; }
 .review-author > div { display: grid; }
 .review-author strong { font-size: 1rem; }
-.review-author small { color: #66716d; font-size: .78rem; }
+.review-author a { color: #66716d; font-size: .78rem; }
+.review-author a:hover { color: var(--forest-2); text-decoration: underline; text-underline-offset: 3px; }
 .review-card > p { margin-top: 30px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.22rem, 1.8vw, 1.52rem); line-height: 1.45; }
 .reviews-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 26px; }
 .reviews-controls { display: flex; gap: 10px; }
