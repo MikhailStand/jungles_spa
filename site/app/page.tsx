@@ -159,6 +159,14 @@ const gallery = [
   { image: './images/about-9.jpg', alt: 'Коллекция ароматных масел Jungle Spa', caption: 'Ароматные масла для ритуалов' },
 ];
 
+const reviews = [
+  { name: 'nel1sun', initial: 'N', date: '13 апреля', text: 'Массаж был просто восторг, я получила именно тот релакс и проработку…' },
+  { name: 'Милана Пантелеева', initial: 'М', date: '30 октября 2025', text: 'Открываешь дверь и просто оказываешься в другом мире.' },
+  { name: 'Дмитрий К.', initial: 'Д', date: '17 марта', text: 'Нравится качество работы мастеров. Высокая клиентоориентированность.' },
+];
+
+const reviewsUrl = 'https://yandex.ru/medicine/clinic/dzhungli_spa_151408429344';
+
 const passes = [
   { amount: '20 000 ₽', discount: '10%', example: '4 140 ₽', regular: '4 600 ₽' },
   { amount: '30 000 ₽', discount: '15%', example: '3 910 ₽', regular: '4 600 ₽' },
@@ -320,6 +328,34 @@ export default function Home() {
           <div className="master-grid">
             {masters.map((master) => <article className="master-card" key={master.name}><img src={master.image} alt={`Мастер ${master.name}`} loading="lazy" /><div><p className="master-origin">{master.origin}</p><h3>{master.name}</h3><p>{master.text}</p></div></article>)}
           </div>
+        </div>
+      </section>
+
+      <section className="reviews section" id="reviews" aria-labelledby="reviews-title">
+        <div className="shell">
+          <div className="reviews-head">
+            <div><p className="eyebrow">Отзывы гостей</p><h2 id="reviews-title">Что говорят о Jungle Spa</h2></div>
+            <div className="reviews-rating">
+              <strong>5,0</strong>
+              <div><span className="reviews-stars" aria-label="Рейтинг пять из пяти">★★★★★</span><a href={reviewsUrl} target="_blank" rel="noreferrer">103 отзыва на Яндексе ↗</a></div>
+            </div>
+          </div>
+          <Carousel className="reviews-carousel" opts={{ align: 'start' }}>
+            <CarouselContent className="reviews-track">
+              {reviews.map((review) => (
+                <CarouselItem className="review-slide" key={`${review.name}-${review.date}`}>
+                  <article className="review-card">
+                    <div className="review-author"><span aria-hidden="true">{review.initial}</span><div><strong>{review.name}</strong><small>{review.date} · Яндекс Карты</small></div></div>
+                    <p>«{review.text}»</p>
+                  </article>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="reviews-footer">
+              <div className="reviews-controls"><CarouselPrevious className="reviews-button" aria-label="Предыдущий отзыв" /><CarouselNext className="reviews-button" aria-label="Следующий отзыв" /></div>
+              <a className="reviews-link" href={reviewsUrl} target="_blank" rel="noreferrer">Смотреть все отзывы на Яндексе ↗</a>
+            </div>
+          </Carousel>
         </div>
       </section>
 
