@@ -341,7 +341,11 @@ export default function Home() {
       <section className="reviews section" id="reviews" aria-labelledby="reviews-title">
         <div className="shell">
           <div className="reviews-head">
-            <div><p className="eyebrow">Впечатления гостей</p><h2 id="reviews-title">Отзывы</h2></div>
+            <div className="reviews-heading-copy">
+              <p className="eyebrow">Впечатления гостей</p>
+              <h2 id="reviews-title">Отзывы</h2>
+              <p>Реальные впечатления гостей о массаже, мастерах и атмосфере Jungle Spa.</p>
+            </div>
             <div className="reviews-rating">
               <strong>5,0</strong>
               <div><span className="reviews-stars" aria-label="Рейтинг пять из пяти">★★★★★</span><a href={reviewsUrl} target="_blank" rel="noreferrer">104 отзыва на Яндексе ↗</a></div>
