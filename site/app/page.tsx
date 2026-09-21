@@ -160,9 +160,16 @@ const gallery = [
 ];
 
 const reviews = [
-  { name: 'nel1sun', initial: 'N', date: '13 апреля', text: 'Массаж был просто восторг, я получила именно тот релакс и проработку…' },
-  { name: 'Милана Пантелеева', initial: 'М', date: '30 октября 2025', text: 'Открываешь дверь и просто оказываешься в другом мире.' },
-  { name: 'Дмитрий К.', initial: 'Д', date: '17 марта', text: 'Нравится качество работы мастеров. Высокая клиентоориентированность.' },
+  { name: 'nel1sun', initial: 'N', date: '13 апреля', text: 'Получила глубокое расслабление и необходимую проработку спины — именно за таким результатом и пришла.' },
+  { name: 'Маргарита', initial: 'М', date: '3 мая', text: 'Вернулась в салон второй раз: после массажа попробовала комплекс с омовением ног, фитобочкой и скрабированием.' },
+  { name: 'Милана Пантелеева', initial: 'М', date: '30 октября 2025', text: 'Особенно отметила полное погружение в атмосферу: тишину, ароматы и продуманные детали.' },
+  { name: 'Margarita SH', initial: 'M', date: '12 декабря 2025', text: 'Первый балийский массаж понравился: деликатный приём, сильный мастер и комфортная интенсивность.' },
+  { name: 'Валентина', initial: 'В', date: '18 сентября', text: 'После первого визита вернулась вместе с мужем. Трёхчасовая программа и работа Нан и Эки впечатлили обоих.' },
+  { name: 'Nastya', initial: 'N', date: '31 марта 2025', text: 'Ценит салон за тайскую атмосферу, ароматы и интерьер; также дарила мужу сертификат на балийский массаж.' },
+  { name: 'Света', initial: 'С', date: '11 ноября 2024', text: 'Прошла курс тайского массажа по абонементу и отметила аутентичную атмосферу и разные техники мастеров.' },
+  { name: 'Анна Б.', initial: 'А', date: '21 июня 2025', text: 'Ходит в салон около двух лет и ценит стабильное качество, выбор массажей и возможность расслабиться в кедровой бочке.' },
+  { name: 'Дмитрий К.', initial: 'Д', date: '17 марта', text: 'Выбирает Jungle Spa в Королёве за качество мастеров, внимание к деталям и заботливый подход.' },
+  { name: 'Артём Плескушкин', initial: 'А', date: '26 декабря 2025', text: 'Отметил опыт мастера, аккуратную работу, хороший выбор масел и приятное общение с администратором.' },
 ];
 
 const reviewsUrl = 'https://yandex.ru/medicine/clinic/dzhungli_spa_151408429344';
@@ -334,10 +341,10 @@ export default function Home() {
       <section className="reviews section" id="reviews" aria-labelledby="reviews-title">
         <div className="shell">
           <div className="reviews-head">
-            <div><p className="eyebrow">Отзывы гостей</p><h2 id="reviews-title">Что говорят о Jungle Spa</h2></div>
+            <div><p className="eyebrow">Впечатления гостей</p><h2 id="reviews-title">Отзывы</h2></div>
             <div className="reviews-rating">
               <strong>5,0</strong>
-              <div><span className="reviews-stars" aria-label="Рейтинг пять из пяти">★★★★★</span><a href={reviewsUrl} target="_blank" rel="noreferrer">103 отзыва на Яндексе ↗</a></div>
+              <div><span className="reviews-stars" aria-label="Рейтинг пять из пяти">★★★★★</span><a href={reviewsUrl} target="_blank" rel="noreferrer">104 отзыва на Яндексе ↗</a></div>
             </div>
           </div>
           <Carousel className="reviews-carousel" opts={{ align: 'start' }}>
@@ -346,7 +353,7 @@ export default function Home() {
                 <CarouselItem className="review-slide" key={`${review.name}-${review.date}`}>
                   <article className="review-card">
                     <div className="review-author"><span aria-hidden="true">{review.initial}</span><div><strong>{review.name}</strong><small>{review.date} · Яндекс Карты</small></div></div>
-                    <p>«{review.text}»</p>
+                    <p>{review.text}</p>
                   </article>
                 </CarouselItem>
               ))}
